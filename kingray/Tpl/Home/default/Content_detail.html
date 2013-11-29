@@ -1,0 +1,156 @@
+<include file="./kingray/Tpl/Home/default/header.html" />
+<div class="full-width-wrapper">
+    <div class="fixed-width-wrapper" id="body-content">
+        <!--Content-->
+        <div id="content" class="float-left content-left">
+            <div class="header-text">
+                <ul id="breadcrumbs">
+                    <li>
+                        <a href="__URL__/index" title="">
+                            首页
+                        </a>
+                    </li>
+                    <volist id="voname" name="navarr">
+						<li>
+                            <a href="{$voname.url}" title="">
+                            {$voname.name}
+                            </a>
+                        </li>
+                    </volist>
+                </ul>
+                <h3 class="first-word double-color sp" style="color:#ccc;text-align:right" >
+                    文章内容
+                </h3>
+            </div>
+            <div class="post entry-content">
+                <!--文章标题-->
+                <h3  style="text-align:center;font-weight:bold">{$content.title}</h3>
+                <!--/文章标题-->
+                
+                <!--文章基本信息-->
+                 <div class="posts-info"  style="margin-left:43%;">
+                    <span title="" class="date">
+                    	{$content.time|date="Y-m-d",###}
+                        </span>
+                </div>
+                 <!--/文章基本信息-->
+                 
+				<volist id="para" name="content.para">
+                  <!--段落小标题1-->
+                <h5 class="first-word">{$para.title}</h5>
+                <!--/段落小标题1-->
+                
+                <!--段落1图片-->
+				<empty name="para.img">
+				<else />
+				<div class="img-border preloading-light align-left">
+                       <img src="__PUBLIC__/Uploads/img/{$para.img}" alt="">
+                </div>
+				</empty>
+               <!--/段落1图片-->
+               
+               <!--段落1内容-->
+                <p>
+				{$para.content}
+                </p>
+                <!--段落1内容-->
+                </volist>
+				<eq name="content.id" value="63">
+					<iframe width="650" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://ditu.google.cn/maps?f=d&amp;source=s_d&amp;saddr=22.529797,114.031692&amp;daddr=&amp;geocode=&amp;sll=22.529881,114.03204&amp;sspn=0.003424,0.005681&amp;hl=zh-CN&amp;brcurrent=3,0x31508e64e5c642c1:0x951daa7c349f366f,0%3B5,0,0&amp;mra=mift&amp;mrsp=0&amp;sz=18&amp;ie=UTF8&amp;t=m&amp;ll=22.53218,114.030447&amp;spn=0.00991,0.027852&amp;z=15&amp;output=embed"></iframe><br /><small><a href="http://ditu.google.cn/maps?f=d&amp;source=embed&amp;saddr=22.529797,114.031692&amp;daddr=&amp;geocode=&amp;sll=22.529881,114.03204&amp;sspn=0.003424,0.005681&amp;hl=zh-CN&amp;brcurrent=3,0x31508e64e5c642c1:0x951daa7c349f366f,0%3B5,0,0&amp;mra=mift&amp;mrsp=0&amp;sz=18&amp;ie=UTF8&amp;t=m&amp;ll=22.53218,114.030447&amp;spn=0.00991,0.027852&amp;z=15" style="color:#666;text-align:left" target="_blank">查看</a></small>
+				</eq>
+            </div>
+        </div>
+        <!--/Content-->
+        <!--Sidebar-->
+        <div id="sidebar" class="float-right">
+        	<div class="box">
+                <h3 class="first-word double-color sp">
+                    {$Lone.name}
+                </h3>
+                <ul class="list cat">
+                    <volist id="vosub" name="subList">
+                        <li>
+                            <a href="{$vosub.url}" id="{$vosub.id}">
+                                {$vosub.nav_name}
+                            </a>
+                        </li>
+                    </volist>
+                </ul>
+                <input type="hidden" value="{$currentId}" id="CurrentId"/>
+                <script type="text/javascript">
+					$(function (){
+						var cureentID = $("#CurrentId").val();
+							$(".cat li a").each(function(index, element) {
+                                	if($(this).attr('id')==cureentID){
+										$(this).parent().addClass('current');
+										}
+                            });
+						});
+                </script>
+            </div>
+            <!--box-->
+            <div class="box">
+                <h3 class="first-word double-color sp">
+                    快速链接
+                </h3>
+                <ul class="list quote">
+                    <volist id="last" name="hot">
+                    <li>
+                        <!--<span class="quote">
+                        </span>-->
+                        <p>
+                            "{$last.content|strip_tags|msubstr=0,20}"
+                        </p>
+                        <a href="__URL__/article/detail/{$last.id}">
+                         <!--   <strong>
+                                admin
+                            </strong>
+                            --->
+                            <b>
+                                {$last.title}
+                            </b>
+                        </a>
+                    </li>
+                    </volist>
+                </ul>
+            </div>
+            <!--/box-->
+            <!--box-->
+            <!--<div class="box">
+                <h3 class="first-word double-color sp">
+                    More About Us
+                </h3>
+                <ul class="list cat">
+                    <li>
+                        <a href="#" title="">
+                            Lorem ipsum dolor sit amet consectetur
+                        </a>
+                    </li>
+                    <li class="current">
+                        <a href="#" title="">
+                            Praesent ultricies urna a urna
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="">
+                            Quisque metus enim, venenatis
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="">
+                            Nullam ven tincidunt dolor consectetur
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" title="">
+                            Lorem ipsum dolor sit amet consectetur
+                        </a>
+                    </li>
+                </ul>
+            </div>-->
+            <!--/box-->
+        </div>
+        <include file="./kingray/Tpl/Home/default/footer2.html" />
+    </div>
+</div>
+<include file="./kingray/Tpl/Home/default/footer.html" />

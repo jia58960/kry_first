@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <title>
+           深圳市金瑞亿投资发展有限公司
+        </title>
+        <load href="__PUBLIC__/Home/default/Css/reset.css" />
+        <load href="__PUBLIC__/Home/default/Css/base.css" />
+        <load href="__PUBLIC__/Home/default/Css/tipTip.css" />
+        <load href="__PUBLIC__/Home/default/Css/short-code.css" />
+        <load href="__PUBLIC__/Home/default/Css/prettyPhoto.css" />
+        <load href="__PUBLIC__/Home/default/Css/css3.css" />
+        <load href="__PUBLIC__/Home/default/Css/slider.css" />
+        <load href="__PUBLIC__/Home/default/Js/jquery-1.8.3.min.js" />
+         
+        
+        <load href="__PUBLIC__/Home/default/Js/scripts.js" />
+        <load href="__PUBLIC__/Home/default/Js/jquery.nivo.slider.js" />
+   
+        <!--<load href="__PUBLIC__/Home/default/Js/cufon-yui.js" />
+
+		<load href="__PUBLIC__/Home/default/Js/Harabara.js" />
+        <load href="__PUBLIC__/Home/default/Js/cufon-replace.js" />-->
+        <load href="__PUBLIC__/Home/default/Js/custom.js" />
+        
+        <load href="__PUBLIC__/Home/default/Js/shortcode.js" />
+       
+        <!--[if IE 7]>
+            <load href="__PUBLIC__/Home/default/Css/ie7.css" />
+        <![endif]-->
+    </head>
+    
+    <body class="home">
+   		<!--Nav topbar-->
+        <div class="navbar navbar-fixed-top" id="">
+        <div class="navbar-inner">
+            <div class="container">
+            	<a href="{$menu.homeurl}" title="" id="kingray"> <img src="__PUBLIC__/Home/default/Images/nav_logo.png" alt="kingray_logo" />
+                    </a>
+                <ul class="nav">
+            <li><a href="http://mail.sz-kingray.com/" target="_blank">公司邮箱</a></li>
+            <li><a href="http://szkingray.3322.org:19999/bbs" target="_blank">公司论坛</a></li>
+            <!--<li><a href="http://szkingray.3322.org:19999" target="_blank">OA/CMS</a></li>-->
+          </ul>
+            </div>
+            </div>
+        </div>
+        <!--/Nav topbar-->
+        <!--Header-->
+        <div class="full-width-wrapper" id="header">
+            <div class="full-width-wrapper" id="abstract-bg">
+                <!--Banner-->
+                <div class="fixed-width-wrapper" id="banner">
+                    <!-- <a href="{$menu.homeurl}" title="" class="logo"> <img src="__PUBLIC__/Home/default/Images/nav_header.jpg" alt="kingray_logo" />
+                    </a> -->
+                   <!-- <ul class="social-network">
+                   
+                        <li>
+                            <a href="#" title="Facebook"> <img src="__PUBLIC__/Home/default/Images/icons/facebook.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Twitter"> <img src="__PUBLIC__/Home/default/Images/icons/twitter.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Delicious"> <img src="__PUBLIC__/Home/default/Images/icons/delicious.png" alt="">
+                            </a>
+                        </li>
+                    </ul>-->
+                </div>
+                <!--/Banner-->
+                <!--Navigation + Search-->
+                <div class="fixed-width-wrapper border-radius-5px" id="navigation-bar">
+                    <div id="g-navigation">
+                        <ul class="simple-drop-down-menu">
+                            <li class="home-page border-radius-left-5px">
+                                <a href="{$menu.homeurl}">
+                                   首页
+                                </a>
+                            </li>
+                            
+                            <volist name="menu.nav" id="navr">
+                            	<li>
+                                <a href="{$navr.url}" title="">
+                                    {$navr.nav_name}
+                                </a>
+                                <ul>
+                                	<volist name="navr.sub" id="vo">
+                                    	<li>
+                                        <a href="{$vo.url}" title="">
+                                        	{$vo.nav_name}
+                                           </a>
+                                          </li>
+                                    </volist>
+                                </ul>
+                            </li>
+                            </volist>
+                        </ul>
+                    </div>
+                    <div id="g-search">
+                        <form action="" method="post">
+                            <div>
+                                <input type="text" class="input-field border-radius-left-3px reset-text"
+                                value="Search here...">
+                            </div>
+                            <div>
+                                <button type="submit" title="Search" class="sprite">
+                                    <em>
+                                        Search
+                                    </em>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--/Navigation + Search-->
+            </div>
+        </div>
